@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Another AdBlocker",
+    "version": "1.0",
+    "description": "Block ads by removing specific classes and ids",
+    "permissions": ["activeTab", "storage"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "48": "images/adblock-48.png",
+        "96": "images/adblock-96.png"
+      }
+    },
+    "icons": {
+      "48": "images/adblock-48.png",
+      "96": "images/adblock-96.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/*"],
+        "js": ["dist/content.bundle.js"]
+      }
+    ]
+  }
